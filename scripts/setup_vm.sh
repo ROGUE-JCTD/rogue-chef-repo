@@ -6,6 +6,8 @@ set -e
 apt-get install curl -y
 
 # install rvm 
+curl -#LO https://rvm.io/mpapis.asc
+gpg --import mpapis.asc
 curl -L https://get.rvm.io | bash -s stable
 
 # activate the correct rvm environment
@@ -29,7 +31,7 @@ if [ -d rogue-chef-repo ];
 then
 cd rogue-chef-repo
 else
-git clone https://github.com/ROGUE-JCTD/rogue-chef-repo.git
+git clone https://github.com/jsmithpdc/rogue-chef-repo.git
 cd rogue-chef-repo
 fi
 bundle install
