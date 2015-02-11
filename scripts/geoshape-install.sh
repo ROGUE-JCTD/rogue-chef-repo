@@ -38,7 +38,7 @@ echo GEOSHAPE_VERSION: ${GEOSHAPE_VERSION}
 apt-get install curl -y
 
 # install rvm
-gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 curl -L https://get.rvm.io | bash -s stable
 
 # activate the correct rvm environment
@@ -66,8 +66,8 @@ if [ -d rogue-chef-repo ];
 then
   cd rogue-chef-repo
 else
-  git clone https://github.com/ROGUE-JCTD/rogue-chef-repo.git
-  cd rogue-chef-repo
+git clone https://github.com/jsmithpdc/rogue-chef-repo.git
+cd rogue-chef-repo
 fi
 
 if [ -z "$GEOSHAPE_VERSION" ];
